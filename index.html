@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>omochi_portforio</title>
+
+    <!-- ファビコンの設定 -->
+    <link rel="icon" href="./favicon.png" />
+
+    <!-- google fontの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+Chakma&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/common/css/reset.css" />
+    <!-- <link rel="stylesheet" href="/common/css/style.css" /> -->
+    <link rel="stylesheet" href="./public/assets/css/style.css" />
+
+    <!-- GSAP CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- split-type CDN -->
+    <script src="https://unpkg.com/split-type"></script>
+  </head>
+  <body>
+    <div class="marquee-container">
+      <div class="marquee-wrapper">
+        <div class="marquee-content">
+          <a href="#" class="marquee-link">～　おもちの日々のつぶやきを更新中　～</a>
+        </div>
+        <div class="marquee-content">
+          <a href="#" class="marquee-link">～　おもちの日々のつぶやきを更新中　～</a>
+        </div>
+        <div class="marquee-content">
+          <a href="#" class="marquee-link">～　おもちの日々のつぶやきを更新中　～</a>
+        </div>
+        <div class="marquee-content">
+          <a href="#" class="marquee-link">～　おもちの日々のつぶやきを更新中　～</a>
+        </div>
+        <div class="marquee-content">
+          <a href="#" class="marquee-link">～　おもちの日々のつぶやきを更新中　～</a>
+        </div>
+        <div class="marquee-content">
+          <a href="#" class="marquee-link">～　おもちの日々のつぶやきを更新中　～</a>
+        </div>
+        <div class="marquee-content">
+          <a href="#" class="marquee-link">～　おもちの日々のつぶやきを更新中　～</a>
+        </div>
+      </div>
+    </div>
+    <header class="header" id="header">
+      <div class="header__inner">
+        <div class="header__contents">
+          <div class="header__title">
+            <h1 class="header__logo">
+              <a href="/"><img src="./common/img/header-logo.png" alt="ヘッダーロゴ" /></a>
+            </h1>
+            <button id="js-drawer-button" type="button" class="header__icon drawer-icon">
+              <div class="drawer-icon__image">
+                <div class="drawer-icon__bar"></div>
+                <div class="drawer-icon__bar"></div>
+                <div class="drawer-icon__bar"></div>
+              </div>
+            </button>
+          </div>
+          <nav id="js-drawer-content" class="header__nav">
+            <ul class="header__lists">
+              <li class="header__list">
+                <a href="#about" class="header__link">
+                  <span class="header__link-text">私について</span>
+                  <span class="header__link-subtext">About</span>
+                </a>
+              </li>
+              <li class="header__list">
+                <a href="#works" class="header__link">
+                  <span class="header__link-text">実績一覧</span>
+                  <span class="header__link-subtext">Works</span>
+                </a>
+              </li>
+              <li class="header__list">
+                <a href="#service" class="header__link">
+                  <span class="header__link-text">できること</span>
+                  <span class="header__link-subtext">Works</span>
+                </a>
+              </li>
+              <li class="header__list">
+                <a href="#price" class="header__link">
+                  <span class="header__link-text">料金表</span>
+                  <span class="header__link-subtext">Price</span>
+                </a>
+              </li>
+              <li class="header__list">
+                <a href="#flow" class="header__link">
+                  <span class="header__link-text">仕事の流れ</span>
+                  <span class="header__link-subtext">Flow</span>
+                </a>
+              </li>
+            </ul>
+            <a href="page-contact.html" class="header__button button">
+              <span class="header__button-text button__text">お問い合わせ</span>
+              <span class="header__button-icon button__icon"><img src="./common/img/mail-icon.png" alt="お問い合わせのメールアイコン" /></span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="fv">
+      <div class="fv__inner">
+        <div class="fv__contents">
+          <div class="fv__image">
+            <picture>
+              <!-- スマートフォン用画像（viewport幅が767px以下の場合） -->
+              <source media="(max-width: 767px)" srcset="./common/img/sp/fv-img-sp.png" />
+              <!-- PC用画像（デフォルト） -->
+              <img src="./common/img/fv-img-pc.png" alt="fvセクションの画像" />
+            </picture>
+          </div>
+          <div class="fv__body">
+            <h2 class="fv__title">
+              <span class="fv__decorated-text">一</span>
+              <span class="fv__decorated-text">級</span>
+              <span class="fv__decorated-text">建</span>
+              <span class="fv__decorated-text">築</span>
+              <span class="fv__decorated-text">士</span>
+              が提案する<br class="hidden-pc" />WEB制作
+            </h2>
+            <p class="fv__text">住宅設計の経験で培った汲み取り力で、<br class="hidden-sp" />お客様の課題を的確に把握し、解決に導きます。</p>
+          </div>
+          <p class="fv__scrolldown-text hidden-sp">Scroll</p>
+          <div class="fv__scrolldown-bar hidden-sp">
+            <div class="fv__scrolldown-bar-active"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about__title section-title">
+        <div class="about-title__contents section-title__contents">
+          <div class="section-title__ja">私について</div>
+          <div class="section-title__en">About</div>
+        </div>
+      </div>
+      <div class="about__contents">
+        <div class="about__contents-inner inner">
+          <div class="about__head about-head">
+            <div class="about-head__image">
+              <picture>
+                <!-- スマートフォン用画像（デフォルト） -->
+                <source media="(max-width: 767px)" srcset="./common/img/sp/about-img-sp.png" />
+                <!-- PC用画像 -->
+                <source media="(min-width: 768px)" srcset="./common/img/about-img-pc.png" />
+                <!-- フォールバック用のimg要素 -->
+                <img src="./common/img/about-img-pc.png" alt="自分の写真" />
+              </picture>
+            </div>
+          </div>
+          <div class="about__body about-body">
+            <div class="about-body__contents">
+              <div class="about-body__text">会社員としての経験を通じて、集客や販売に悩む企業が多い現実を目の当たりにし、力になりたいという思いからWEB制作を学び始めました。コーディングを得意としていますが、 デザインのご提案やWordPress化、細かな修正まで幅広くご対応可能です。</div>
+              <div class="about__lists">
+                <div class="about__list">
+                  <div class="about__list--label">名前</div>
+                  <div class="about__list--text">藤枝　和大(ふじえだ　かずひろ)</div>
+                </div>
+                <div class="about__list">
+                  <div class="about__list--label">仕事</div>
+                  <div class="about__list--text">Webエンジニア</div>
+                </div>
+                <div class="about__list">
+                  <div class="about__list--label">住所</div>
+                  <div class="about__list--text">茨城</div>
+                </div>
+                <div class="about__list">
+                  <div class="about__list--label">スキル</div>
+                  <div class="about__list--text">HTML / CSS / Javascript / php / WordPress</div>
+                </div>
+                <div class="about__list">
+                  <div class="about__list--label">SNS</div>
+                  <div class="about__list--text"><img src="./common/img/x-icon.svg" alt="Xのアイコン" /></div>
+                </div>
+              </div>
+              <div class="about__button about-button">
+                <div class="button__wrap">
+                  <a href="page-contact.html" class="button about-button__link">
+                    <span class="button__text">お問い合わせはこちら</span>
+                    <span class="button__icon about-button__icon"><img src="./common/img/mail-icon.png" alt="お問い合わせのメールアイコン" /></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="works">
+      <div class="works__inner">
+        <div class="works__title section-title">
+          <div class="works-title__contents section-title__contents">
+            <div class="section-title__ja">実績一覧</div>
+            <div class="section-title__en">Works</div>
+          </div>
+        </div>
+        <div class="works__contents">
+          <div class="works__swiper-container">
+            <div class="swiper works__swiper">
+              <div class="swiper-wrapper works__swiper-wrapper">
+                <div class="swiper-slide works__swiper-slide">
+                  <a href="#" class="works__image">
+                    <img src="./common/img/works-sobolon.png" alt="制作実績の画像" />
+                  </a>
+                </div>
+                <div class="swiper-slide works__swiper-slide">
+                  <a href="#" class="works__image">
+                    <img src="./common/img/works-portforio.png" alt="制作実績の画像" />
+                  </a>
+                </div>
+                <div class="swiper-slide works__swiper-slide">
+                  <a href="#" class="works__image">
+                    <img src="./common/img/works-onomichi.png" alt="制作実績の画像" />
+                  </a>
+                </div>
+                <div class="swiper-slide works__swiper-slide">
+                  <a href="#" class="works__image">
+                    <img src="./common/img/works-new-portforio.png" alt="制作実績の画像" />
+                  </a>
+                </div>
+                <div class="swiper-slide works__swiper-slide">
+                  <a href="#" class="works__image">
+                    <img src="./common/img/works-omochi-cafe.png" alt="制作実績の画像" />
+                  </a>
+                </div>
+                <div class="swiper-slide works__swiper-slide">
+                  <a href="#" class="works__image">
+                    <img src="./common/img/works-tf30.png" alt="制作実績の画像" />
+                  </a>
+                </div>
+                <div class="swiper-slide works__swiper-slide">
+                  <a href="#" class="works__image">
+                    <img src="./common/img/works-oha.png" alt="制作実績の画像" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination works__swiper-pagination"></div>
+            <div class="swiper-button-prev works__swiper-button-prev"></div>
+            <div class="swiper-button-next works__swiper-button-next"></div>
+          </div>
+          <div class="works__list">
+            <a href="page-works.html" class="works__list-link">制作実績一覧</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="service">
+      <!-- <div class="service__inner"> -->
+      <div class="service__title section-title">
+        <div class="service-title__contents section-title__contents">
+          <div class="section-title__ja">できること</div>
+          <div class="section-title__en">Service</div>
+        </div>
+      </div>
+      <div class="service__contents">
+        <div class="service__item">
+          <div class="service__item-inner">
+            <div class="service__item-contents">
+              <div class="service__head"><img src="./common/img/service-img1.png" alt="serviceセクションの画像1" /></div>
+              <div class="service__body">
+                <div class="service__body-title animated__slideUp">ホームページ制作</div>
+                <div class="service__text">ご要望に応じて、丁寧に対応させていただきます。訪問された方に魅力が伝わるようなホームページを一緒に作っていきましょう！</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="service__item">
+          <div class="service__item-inner">
+            <div class="service__item-contents type2">
+              <div class="service__head"><img src="./common/img/service-img2.png" alt="serviceセクションの画像2" /></div>
+              <div class="service__body">
+                <div class="service__body-title animated__slideUp">ホームページ制作修正</div>
+                <div class="service__text">文言の変更や表示崩れなど、ホームページでのちょっとしたお困りごとに対応いたします。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="service__item">
+          <div class="service__item-inner">
+            <div class="service__item-contents">
+              <div class="service__head"><img src="./common/img/service-img3.png" alt="serviceセクションの画像3" /></div>
+              <div class="service__body">
+                <div class="service__body-title animated__slideUp">ホームページ相談</div>
+                <div class="service__text">ホームページ制作に関するご相談を無料でお受けしております。些細なことでもお気軽にご相談ください！</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </section>
+
+    <section id="price" class="price">
+      <div class="price__inner inner">
+        <div class="price__title section-title">
+          <div class="price-title__contents section-title__contents">
+            <div class="section-title__ja">料金表</div>
+            <div class="section-title__en">Price</div>
+          </div>
+        </div>
+        <div class="price__contents">
+          <div class="tab-buttons">
+            <button class="tab-button active" data-tab="1">Coding</button>
+            <button class="tab-button" data-tab="2">WordPress</button>
+          </div>
+          <div class="tab-content active" id="tab1">
+            <div class="price__card price-card">
+              <div class="price-card__contents">
+                <div class="price-card__items">
+                  <div class="price-card__items-inner">
+                    <div class="price-card__items-wrapper">
+                      <div class="price-card__item">
+                        <div class="price-card__label">TOPページ</div>
+                        <div class="price-card__price">20,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                      <div class="price-card__item">
+                        <div class="price-card__label">下層ページ</div>
+                        <div class="price-card__price">10,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                      <div class="price-card__item">
+                        <div class="price-card__label">お問い合わせフォーム</div>
+                        <div class="price-card__price">15,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                      <div class="price-card__item">
+                        <div class="price-card__label">基本アニメーション</div>
+                        <div class="price-card__price">10,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                      <div class="price-card__item">
+                        <div class="price-card__label">複雑なアニメーション</div>
+                        <div class="price-card__price">15,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="price-card__text">
+                  <div class="price-card__text-inner">
+                    <div class="price-card__text-wrapper">
+                      <p>※料金は税抜価格です。</p>
+                      <p>※料金は目安となります。ご予算に応じてご相談ください。</p>
+                      <p>※Webサイトコーディングのみの料金になっております。</p>
+                      <p>※お急ぎの場合は事前にご相談ください。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="tab2">
+            <div class="price__card price-card">
+              <div class="price-card__contents">
+                <div class="price-card__items">
+                  <div class="price-card__items-inner">
+                    <div class="price-card__items-wrapper">
+                      <div class="price-card__item">
+                        <div class="price-card__label">TOPページ</div>
+                        <div class="price-card__price">30,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                      <div class="price-card__item">
+                        <div class="price-card__label">下層ページ</div>
+                        <div class="price-card__price">20,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                      <div class="price-card__item">
+                        <div class="price-card__label">お問い合わせフォーム</div>
+                        <div class="price-card__price">25,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                      <div class="price-card__item">
+                        <div class="price-card__label">固定ページ実装</div>
+                        <div class="price-card__price">10,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                      <div class="price-card__item">
+                        <div class="price-card__label">カスタム投稿実装</div>
+                        <div class="price-card__price">15,000<span class="price-card__yen">円〜</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="price-card__text">
+                  <div class="price-card__text-inner">
+                    <div class="price-card__text-wrapper">
+                      <p>※料金は税抜価格です。</p>
+                      <p>※料金は目安となります。ご予算に応じてご相談ください。</p>
+                      <p>※Webサイトコーディングのみの料金になっております。</p>
+                      <p>※お急ぎの場合は事前にご相談ください。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" class="work-flow">
+      <div class="work-flow__inner">
+        <div class="work-flow__title section-title">
+          <div class="work-flow-title__contents section-title__contents">
+            <div class="section-title__ja">制作の流れ</div>
+            <div class="section-title__en">Work Flow</div>
+          </div>
+        </div>
+        <div class="work-flow__text">ご相談から納品までの大まかな流れです。状況に応じて柔軟に対応いたします。</div>
+        <div class="work-flow__contents">
+          <div class="work-flow__contents-inner">
+            <div class="work-flow__cards">
+              <div class="work-flow__card work-flow-card">
+                <div class="work-flow-card__head"><img src="/common/img/work-flow1.png" alt="work-flowのイメージ画像1" /></div>
+                <div class="work-flow-card__body">
+                  <div class="work-flow-card__body-inner">
+                    <div class="work-flow-card__body-contents">
+                      <div class="work-flow-card__body-title">ご相談・お見積り</div>
+                      <div class="work-flow-card__body-description">要件や納期、予算など奥がるにご相談ください。<br />対応内容に応じてお見積りをお送りいたします。</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-flow__card work-flow-card">
+                <div class="work-flow-card__head"><img src="/common/img/work-flow2.png" alt="work-flowのイメージ画像2" /></div>
+                <div class="work-flow-card__body">
+                  <div class="work-flow-card__body-inner">
+                    <div class="work-flow-card__body-contents">
+                      <div class="work-flow-card__body-title">コーディング</div>
+                      <div class="work-flow-card__body-description">デザインカンプを元にコーディングを行います。コーディング後は品質チェックを行い調整します。</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-flow__card work-flow-card">
+                <div class="work-flow-card__head"><img src="/common/img/work-flow3.png" alt="work-flowのイメージ画像3" /></div>
+                <div class="work-flow-card__body">
+                  <div class="work-flow-card__body-inner">
+                    <div class="work-flow-card__body-contents">
+                      <div class="work-flow-card__body-title">確認</div>
+                      <div class="work-flow-card__body-description">お客様にコーディングしたサイトをご確認頂きます。 不足部分の修正と対応を行います。</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-flow__card work-flow-card">
+                <div class="work-flow-card__head"><img src="/common/img/work-flow4.png" alt="work-flowのイメージ画像4" /></div>
+                <div class="work-flow-card__body">
+                  <div class="work-flow-card__body-inner">
+                    <div class="work-flow-card__body-contents">
+                      <div class="work-flow-card__body-title">納品</div>
+                      <div class="work-flow-card__body-description">コーディング後のファイル一式を納品いたします。<br />本番サーバーへのアップロードも対応可能です。</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sns">
+      <div class="sns__inner inner">
+        <div class="sns__contents">
+          <div class="sns__title section-title">
+            <div class="sns-title__contents section-title__contents">
+              <div class="section-title__ja">SNS発信中 ！</div>
+              <div class="section-title__en">Social media</div>
+            </div>
+          </div>
+          <a href="" class="sns__link"><img src="/common/img/sns-img.png" alt="snsリンクの画像" /></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta__inner inner">
+        <div class="cta__card">
+          <div class="cta__title section-title">
+            <div class="cta-title__contents section-title__contents">
+              <div class="section-title__ja">お問い合わせ</div>
+              <div class="section-title__en">Contact</div>
+            </div>
+          </div>
+          <div class="cta__text">制作のご依頼やご相談はコチラからお問い合わせください。</div>
+          <div class="cta__button cta-button">
+            <div class="button__wrap">
+              <a href="page-contact.html" class="button cta-button__link">
+                <span class="button__text">お問い合わせはこちら</span>
+                <span class="button__icon"><img src="./common/img/mail-icon.png" alt="お問い合わせのメールアイコン" /></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer__inner inner">
+        <div class="footer__contents">
+          <h1 class="footer__logo">
+            <a href="/"><img src="./common/img/footer-logo.png" alt="フッターロゴ" /></a>
+          </h1>
+          <ul class="footer__lists">
+            <li class="footer__list">
+              <a href="#about" class="footer__link">
+                <span class="footer__link-text">私について</span>
+                <span class="footer__link-subtext">About</span>
+              </a>
+            </li>
+            <li class="footer__list">
+              <a href="#works" class="footer__link">
+                <span class="footer__link-text">実績一覧</span>
+                <span class="footer__link-subtext">Works</span>
+              </a>
+            </li>
+            <li class="footer__list">
+              <a href="#service" class="footer__link">
+                <span class="footer__link-text">できること</span>
+                <span class="footer__link-subtext">Works</span>
+              </a>
+            </li>
+            <li class="footer__list">
+              <a href="#price" class="footer__link">
+                <span class="footer__link-text">料金表</span>
+                <span class="footer__link-subtext">Price</span>
+              </a>
+            </li>
+            <li class="footer__list">
+              <a href="#flow" class="footer__link">
+                <span class="footer__link-text">仕事の流れ</span>
+                <span class="footer__link-subtext">Flow</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="footer__sns-link">
+            <img src="/common/img/footer-x-icon.svg" alt="フッターセクションのXアイコン" />
+          </a>
+        </div>
+        <div class="footer__copyright">
+          <small class="footer__copyright-text"> ©2024 Kazuhiro Fujida’s Portfolio All rights reserved </small>
+        </div>
+      </div>
+    </section>
+
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/script.js"></script>
+  </body>
+</html>
