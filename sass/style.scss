@@ -1,6 +1,5 @@
 @use "sass:map";
 
-// $main-color: #858e55;
 $text-color: #333;
 
 $font-ja-1: "Noto Sans JP", sans-serif;
@@ -43,6 +42,11 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  /* ベースのフォントサイズ */
+  font-size: clamp(32px, calc(1.25vw + 1rem), 60px);
+}
+
 .button__wrap {
   display: inline-block;
 }
@@ -72,6 +76,8 @@ body {
   }
 
   &.works-detail {
+    padding: 17px 24px 17px 28px;
+
     @include mq(lg) {
       padding: 15px 26px 15px 31px;
     }
@@ -142,29 +148,17 @@ body {
   }
 
   &::before {
-    // position: absolute;
-    // content: "";
     background: url(/common/img/section-logo-green.png) no-repeat center center / contain;
     width: 60px;
     height: 60px;
     left: 0;
-    // top: 50%;
-    // transform: translateY(-50%);
-
-    // opacity: 1;
-    // transform: translateY(-50%) rotate(0deg);
-    // transition: opacity 0.6s, transform 0.6s;
   }
 
   &::after {
-    // position: absolute;
-    // content: "";
     background: url(/common/img/section-logo-beige.png) no-repeat center center / contain;
     width: 75px;
     height: 75px;
     left: 30px;
-    // top: 50%;
-    // transform: translateY(-50%);
     z-index: -1;
   }
 }
@@ -242,7 +236,6 @@ body {
   color: $base-color-w;
   text-decoration: none;
   transition: color 0.3s ease;
-  // font-family: "Noto Sans Chakma";
   font-size: 16px;
 }
 
@@ -277,7 +270,6 @@ body {
   }
 
   @include mq(xl) {
-    // padding-block: 5px;
     padding-top: 12px;
     padding-bottom: 14px;
   }
@@ -293,11 +285,10 @@ body {
   }
 
   @include mq(xl) {
-    max-width: calc(1160px + 140px * 2);
-    // padding: 13px 76px 13px 100px;
-    // padding-inline: 77px;
-    padding-left: 100px;
-    padding-right: 76px;
+    max-width: 1190px;
+    margin: 0 auto;
+    padding-left: 55px;
+    padding-right: 32px;
   }
 }
 
@@ -316,7 +307,6 @@ body {
   align-items: center;
   border-radius: 44px;
   z-index: 1;
-  // padding: 8px 20px;
 
   @include mq(md) {
     background: transparent;
@@ -374,7 +364,6 @@ body {
 }
 
 .drawer-icon__image {
-  // text-align: center;
   position: absolute;
   content: "";
   top: 50%;
@@ -437,12 +426,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 15px;
-    background: transparent;
-  }
-
-  @include mq(lg) {
     gap: 30px;
+    background: transparent;
   }
 
   @include mq(xl) {
@@ -451,12 +436,7 @@ body {
 
   &.is-checked {
     transform: translateY(0);
-    // padding-top: calc(32px - 8px + 34px);
-    // margin-top: -34px;
     padding-top: 100px;
-    // width: 100%;
-    // left: 0;
-    // top: 50px;
 
     @include mq(md) {
       padding-top: 0;
@@ -473,7 +453,6 @@ body {
 .header__lists {
   display: flex;
   flex-direction: column;
-  // gap: calc(40px - 8px * 2);
   gap: 0;
 
   @include mq(md) {
@@ -505,29 +484,26 @@ body {
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: 0.8px;
-  // padding-block: 8px;
   padding-top: 16px;
   padding-bottom: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  // @include mq(md) {
-  //   display: flex;
-  //   flex-direction: column;
-  //   // gap: 4px;
-  //   align-items: center;
-  // }
 }
 
 .header__link-text {
   color: $accent-color-3;
-  // font-family: "Noto Sans JP";
   font-size: 16px;
-  // font-style: normal;
   font-weight: 700;
-  // line-height: normal;
   letter-spacing: 1.12px;
+
+  @include mq(md) {
+    font-size: 14px;
+  }
+
+  @include mq(lg) {
+    font-size: 16px;
+  }
 }
 
 .header__link-subtext {
@@ -535,16 +511,24 @@ body {
   text-align: center;
   font-family: $font-en;
   font-size: 13px;
-  // font-style: normal;
-  // font-weight: 400;
-  // line-height: normal;
   letter-spacing: 0.91px;
 }
 
 .header__button {
-  // padding: 15px 28px 15px 43px;
+  padding: 15px 28px 15px 43px;
   margin-top: 30px;
   display: inline-block;
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+
+  @include mq(xl) {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 28px 12px 43px;
+  }
 
   &.works-detail {
     padding: 12px 29px 12px 43px;
@@ -579,6 +563,7 @@ body {
 
   @include mq(xl) {
     padding-inline: 45px;
+    margin: 0 auto;
   }
 }
 
@@ -596,22 +581,29 @@ body {
   left: 50%;
   transform: translateX(-50%);
   bottom: -130px;
-  // top: 238px;
   background: #fff;
-  // padding: 15px 21px;
   padding-top: 22px;
   padding-bottom: 15px;
-  padding-inline: 22px;
+  padding-inline: 20px;
+
+  @include mq(md) {
+    bottom: -80px;
+  }
 
   @include mq(lg) {
-    // width: calc(522px / 1190px * 100%);
     max-width: 600px;
-    // bottom: 325px;
-    top: 200px;
-    left: 56px;
+    top: calc(140 / 470 * 100%);
+    bottom: unset;
+    left: 30px;
     padding: 0;
     background: transparent;
     transform: unset;
+  }
+
+  @include mq(xl) {
+    top: calc(200 / 650 * 100%);
+    left: 56px;
+    max-width: 700px;
   }
 }
 
@@ -619,50 +611,24 @@ body {
   color: $accent-color-3;
   font-family: $font-ja-2;
   font-size: 24px;
-  // font-style: normal;
   font-weight: 700;
   line-height: 1.5;
-  letter-spacing: 3.12px;
+  letter-spacing: 3px;
 
   @include mq(lg) {
-    font-size: 32px;
+    font-size: 24px;
     line-height: 1.6;
     letter-spacing: 3.8px;
   }
+
+  @include mq(xl) {
+    font-size: 1rem;
+  }
 }
 
-// .fv__decorated-text {
-//   position: relative;
-//   padding-top: 8px;
-//   color: $accent-color-3;
-//   font-family: $font-ja-2;
-//   font-size: 24px;
-//   font-weight: 700;
-//   line-height: 1.5;
-//   margin-right: -0.3em;
-
-//   @include mq(lg) {
-//     font-size: 32px;
-//     line-height: 1.6;
-//   }
-
-//   &::after {
-//     position: absolute;
-//     content: "";
-//     width: 6px;
-//     height: 6px;
-//     border-radius: 50%;
-//     background: $accent-color-3;
-//     top: 0;
-//     left: 50%;
-//     transform: translateX(-50%);
-//   }
-// }
-
-// 試しコード
 .fv__decorated-text {
   position: relative;
-  padding-top: 11px;
+  padding-top: 8px;
   color: $accent-color-3;
   font-family: $font-ja-2;
   font-size: 24px;
@@ -671,8 +637,12 @@ body {
   margin-right: -0.35em;
 
   @include mq(lg) {
-    font-size: 32px;
+    font-size: 24px;
     line-height: 1.6;
+  }
+  @include mq(xl) {
+    font-size: 1rem;
+    padding-top: 11px;
   }
 
   &::after {
@@ -719,36 +689,37 @@ body {
 // バウンドアニメーションの定義
 @keyframes dotBounce {
   0% {
-    transform: translateX(-100%) translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
   30% {
-    transform: translateX(-100%) translateY(-8px);
+    transform: translateX(-50%) translateY(-8px);
   }
   50% {
-    transform: translateX(-100%) translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
   65% {
-    transform: translateX(-100%) translateY(-4px);
+    transform: translateX(-50%) translateY(-4px);
   }
   100% {
-    transform: translateX(-100%) translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
 }
-// 試しコードここまで
 
 .fv__text {
   margin-top: 5px;
   color: $accent-color-3;
-  // font-family: "Noto Sans JP";
   font-size: 17px;
-  // font-style: normal;
-  // font-weight: 400;
   line-height: 1.7;
   letter-spacing: 1.19px;
   padding-right: 3px;
 
   @include mq(lg) {
     margin-top: 14px;
+    font-size: 15px;
+  }
+
+  @include mq(xl) {
+    font-size: calc(0.5rem + 1px);
   }
 }
 
@@ -808,14 +779,6 @@ body {
 .about__title {
   padding-bottom: 25px;
 
-  // @include mq(md) {
-  //   padding-bottom: 30px;
-  // }
-
-  // @include mq(xl) {
-  //   padding-bottom: 39px;
-  // }
-
   @include mq(lg) {
     padding-bottom: 38px;
   }
@@ -835,35 +798,30 @@ body {
     content: "";
     background: url(/common/img/about-bg.png) no-repeat center center / cover;
     width: calc(150px / 375px) * 100%;
-    // height: calc(350px / 967px) * 100%;
-    // height: 200px;
-    // aspect-ratio: 150 / 350;
     height: 350px;
     top: 0;
     right: 0;
     z-index: -1;
 
     @include mq(sm) {
-      aspect-ratio: 150 / 220;
+      height: 570px;
     }
 
-    // @include mq(md) {
-    //   width: calc(300px / 1280px * 100%);
-    //   aspect-ratio: 300 / 700;
-    //   top: -10px;
-    // }
+    @include mq(md) {
+      height: 520px;
+    }
 
     @include mq(lg) {
       width: calc(300px / 1280px * 100%);
       aspect-ratio: 300 / 580;
-      top: -60px;
+      top: 0;
     }
 
-    // @include mq(xl) {
-    //   width: calc(300px / 1280px * 100%);
-    //   aspect-ratio: 300 / 580;
-    //   top: -61px;
-    // }
+    @include mq(xl) {
+      top: -60px;
+      height: 580px;
+      width: calc((300px / 1280px * 100%) + ((100vw - 1280px) * 0.2343));
+    }
   }
 }
 
@@ -873,27 +831,22 @@ body {
   gap: 41px;
   margin: 0 auto;
 
-  @include mq(sm) {
-    // flex-direction: row-reverse;
+  @include mq(md) {
     align-items: center;
-    gap: 20px;
+    gap: 41px;
     max-width: calc(500px + 50px * 2);
     padding-inline: 50px;
   }
-
-  // @include mq(md) {
-  //   flex-direction: row-reverse;
-  //   align-items: center;
-  //   gap: 27px;
-  //   max-width: calc(800px + 50px * 2);
-  //   padding-inline: 50px;
-  // }
 
   @include mq(lg) {
     flex-direction: row-reverse;
     align-items: center;
     gap: 27px;
     max-width: calc(1080px + 100px * 2);
+    padding-inline: 70px;
+  }
+
+  @include mq(xl) {
     padding-inline: 99px;
   }
 }
@@ -903,13 +856,16 @@ body {
 
 .about-head {
   @include mq(md) {
-    width: calc(370px / 1080px * 100%);
     flex-shrink: 0;
   }
 
   @include mq(lg) {
-    width: calc(370px / 1080px * 100%);
+    width: calc(360px / 900px * 100%);
     flex-shrink: 0;
+  }
+
+  @include mq(xl) {
+    width: calc(370px / 1080px * 100%);
   }
 }
 
@@ -921,17 +877,22 @@ body {
   padding-top: 45px;
   padding-bottom: 45px;
 
+  @include mq(sm) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   @include mq(lg) {
     padding-top: 45px;
+    padding-bottom: 45px;
   }
 
   img {
-    width: 230px;
-    height: 260px;
+    width: calc(230 / 335 * 100%);
+    height: auto;
 
     @include mq(sm) {
-      width: 300px;
-      height: auto;
+      max-width: 400px;
     }
 
     @include mq(md) {
@@ -949,8 +910,17 @@ body {
   flex-direction: column;
   gap: 35px;
 
+  @include mq(sm) {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
   @include mq(lg) {
     flex: 1;
+  }
+
+  @include mq(xl) {
+    max-width: unset;
   }
 }
 
@@ -965,8 +935,7 @@ body {
 
 .about-body__text {
   font-size: 16px;
-  // font-style: normal;
-  line-height: 200%; /* 32px */
+  line-height: 200%;
   letter-spacing: 1.12px;
 
   @include mq(lg) {
@@ -990,10 +959,6 @@ body {
   justify-content: flex-start;
   gap: 16px;
 
-  // @include mq(xl) {
-  //   gap: 50px;
-  // }
-
   @include mq(lg) {
     gap: 52px;
   }
@@ -1002,28 +967,22 @@ body {
 .about__list--label {
   width: 65px;
   font-size: 16px;
-  // font-style: normal;
   font-weight: 700;
-  // line-height: normal;
   letter-spacing: 0.32px;
   flex-shrink: 0;
 }
 
 .about__list--text {
   font-size: 16px;
-  // font-style: normal;
-  // font-weight: 400;
-  line-height: 160%; /* 25.6px */
+  line-height: 160%;
   letter-spacing: 0.32px;
   flex: 1;
 }
 
 .about__button {
   text-align: center;
-  // display: inline-block;
 
   @include mq(xl) {
-    // margin-top: -25px;
     text-align: left;
   }
 }
@@ -1032,10 +991,8 @@ body {
 }
 
 .about-button__link {
-  @include mq(lg) {
-    padding: 15px 24px 15px 31px;
-    border-radius: 8px;
-  }
+  padding: 16px 24px 16px 31px;
+  border-radius: 8px;
 }
 
 .about-button__icon {
@@ -1051,14 +1008,9 @@ body {
   padding-bottom: 50px;
   background: $base-color-2;
 
-  // @include mq(xl) {
-  //   padding-top: 100px;
-  //   padding-bottom: 100px;
-  // }
-
   @include mq(lg) {
     padding-top: 100px;
-    padding-bottom: 97px;
+    padding-bottom: 99px;
   }
 }
 
@@ -1087,10 +1039,6 @@ body {
   margin-top: 68px;
   text-align: center;
 
-  // @include mq(xl) {
-  //   margin-top: 78px;
-  // }
-
   @include mq(lg) {
     margin-top: 7px;
   }
@@ -1114,8 +1062,7 @@ body {
 .works__list-link {
   font-family: "Noto Sans Chakma";
   font-size: 16px;
-  // font-style: normal;
-  line-height: 160%; /* 25.6px */
+  line-height: 160%;
   letter-spacing: 2.56px;
 }
 
@@ -1130,8 +1077,8 @@ body {
 .works__swiper {
   padding-bottom: 38px !important;
 
-  @include mq(xl) {
-    padding-bottom: 70px !important;
+  @include mq(lg) {
+    padding-bottom: 68px !important;
     padding-top: 70px !important;
   }
 }
@@ -1235,17 +1182,13 @@ body {
 
 .service {
   padding-top: 73px;
-  padding-bottom: 90px;
+  padding-bottom: 88px;
 
-  @include mq(xl) {
+  @include mq(lg) {
     padding-top: 100px;
     padding-bottom: 148px;
   }
 }
-
-// .service__inner {
-//   padding-inline: 34px;
-// }
 
 .service__title {
 }
@@ -1253,7 +1196,7 @@ body {
 .service-title__contents {
   padding-left: 64px;
 
-  @include mq(xl) {
+  @include mq(lg) {
     margin-right: 60px;
   }
 }
@@ -1276,91 +1219,14 @@ body {
     gap: 150px;
   }
 
-  @include mq(xl) {
+  @include mq(lg) {
     gap: 206px;
   }
 }
 
 .service__item {
   position: relative;
-
-  &::before {
-    position: absolute;
-    content: "";
-    z-index: 1;
-
-    // @include mq(xl) {
-    //   width: 270px;
-    //   height: 326px;
-    //   top: -172px;
-    // }
-  }
-
-  &:nth-child(1)::before {
-    background: url(/common/img/service-no1.png) no-repeat center center / contain;
-    top: -48px;
-    left: 2px;
-    width: 73px;
-    height: 111px;
-
-    @include mq(md) {
-      width: 150px;
-      height: 230px;
-      top: -90px;
-    }
-
-    @include mq(xl) {
-      left: unset;
-      top: -172px;
-      right: 51px;
-      width: 209px;
-      height: 326px;
-    }
-  }
-
-  &:nth-child(2)::before {
-    background: url(/common/img/service-no2.png) no-repeat center center / contain;
-    top: -52px;
-    right: 5px;
-    width: 82px;
-    height: 120px;
-
-    @include mq(md) {
-      width: 150px;
-      height: 230px;
-      top: -90px;
-    }
-
-    @include mq(xl) {
-      right: unset;
-      top: -172px;
-      left: 8px;
-      width: 250px;
-      height: 326px;
-    }
-  }
-
-  &:nth-child(3)::before {
-    background: url(/common/img/service-no3.png) no-repeat center center / contain;
-    top: -48px;
-    left: 2px;
-    width: 86px;
-    height: 111px;
-
-    @include mq(md) {
-      width: 150px;
-      height: 230px;
-      top: -90px;
-    }
-
-    @include mq(xl) {
-      left: unset;
-      right: 14px;
-      width: 247px;
-      height: 326px;
-      top: -172px;
-    }
-  }
+  width: 100%;
 
   &::after {
     position: absolute;
@@ -1368,14 +1234,17 @@ body {
     background: url(/common/img/service-bg.png) no-repeat center center / cover;
     width: calc(355px / 375px * 100%);
     height: 249px;
-    // aspect-ratio: 355 / 249;
     bottom: -40px;
     z-index: -1;
 
-    @include mq(xl) {
+    @include mq(lg) {
       width: calc(840px / 1280px * 100%);
-      height: 404px;
+      height: 300px;
       bottom: -48px;
+    }
+
+    @include mq(xl) {
+      height: 404px;
     }
   }
 
@@ -1394,14 +1263,127 @@ body {
 
 .service__item-inner {
   padding-inline: 34px;
-  // padding-left: calc(35px / 375px * 100%);
+  position: relative;
+
+  @include mq(sm) {
+    padding-inline: 20px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
 
   @include mq(md) {
     padding-inline: 80px;
   }
 
+  @include mq(lg) {
+    padding-inline: 70px;
+    max-width: 1000px;
+  }
+
   @include mq(xl) {
     padding-inline: 100px;
+    max-width: calc(1080px + 100px * 2);
+    margin: 0 auto;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    z-index: 1;
+  }
+}
+
+.service__item:nth-child(1) .service__item-inner::before {
+  background: url(/common/img/service-no1.png) no-repeat center center / contain;
+  top: -48px;
+  left: 2px;
+  width: 73px;
+  height: 111px;
+
+  @include mq(sm) {
+    width: 150px;
+  }
+
+  @include mq(md) {
+    width: 150px;
+    height: 230px;
+    top: -90px;
+  }
+
+  @include mq(lg) {
+    left: unset;
+    top: -172px;
+    right: 14px;
+    width: 180px;
+    height: 270px;
+  }
+
+  @include mq(xl) {
+    right: 51px;
+    width: 209px;
+    height: 326px;
+  }
+}
+
+.service__item:nth-child(2) .service__item-inner::before {
+  background: url(/common/img/service-no2.png) no-repeat center center / contain;
+  top: -52px;
+  right: 5px;
+  width: 82px;
+  height: 120px;
+
+  @include mq(sm) {
+    width: 150px;
+  }
+
+  @include mq(md) {
+    width: 150px;
+    height: 230px;
+    top: -90px;
+  }
+
+  @include mq(lg) {
+    right: unset;
+    top: -172px;
+    left: 8px;
+    width: 180px;
+    height: 270px;
+  }
+
+  @include mq(xl) {
+    width: 250px;
+    height: 326px;
+  }
+}
+
+.service__item:nth-child(3) .service__item-inner::before {
+  background: url(/common/img/service-no3.png) no-repeat center center / contain;
+  top: -48px;
+  left: 2px;
+  width: 86px;
+  height: 111px;
+
+  @include mq(sm) {
+    width: 150px;
+  }
+
+  @include mq(md) {
+    width: 150px;
+    height: 230px;
+    top: -90px;
+  }
+
+  @include mq(lg) {
+    top: -172px;
+    left: unset;
+    right: 14px;
+    width: 180px;
+    height: 270px;
+  }
+
+  @include mq(xl) {
+    width: 247px;
+    height: 326px;
   }
 }
 
@@ -1411,11 +1393,22 @@ body {
   gap: 21px;
   align-items: center;
 
+  @include mq(lg) {
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+  }
+
+  @include mq(xl) {
+    gap: 110px;
+  }
+
   &.type2 {
     align-items: flex-start;
 
     @include mq(lg) {
       align-items: center;
+      flex-direction: row-reverse;
     }
 
     > .service__head {
@@ -1426,17 +1419,6 @@ body {
       }
     }
   }
-
-  @include mq(xl) {
-    flex-direction: row;
-    align-items: center;
-    gap: 110px;
-
-    &.type2 {
-      flex-direction: row-reverse;
-      // justify-content: flex-end;
-    }
-  }
 }
 
 .service__head {
@@ -1444,7 +1426,7 @@ body {
   max-width: calc(270px / 307px * 100%);
   aspect-ratio: 270 / 193;
 
-  @include mq(xl) {
+  @include mq(lg) {
     max-width: calc(430px / 1080px * 100%);
   }
 
@@ -1456,7 +1438,7 @@ body {
 .service__body {
   text-align: left;
 
-  @include mq(xl) {
+  @include mq(lg) {
     max-width: calc(493px / 1080px * 100%);
   }
 }
@@ -1464,9 +1446,8 @@ body {
 .service__body-title {
   color: $accent-color-3;
   font-size: 28px;
-  // font-style: normal;
   font-weight: 700;
-  line-height: 170%; /* 47.6px */
+  line-height: 170%;
   letter-spacing: 1.96px;
   font-family: $font-ja-2;
 }
@@ -1475,9 +1456,8 @@ body {
 .char {
   color: $accent-color-3;
   font-size: 28px;
-  // font-style: normal;
   font-weight: 700;
-  line-height: 170%; /* 47.6px */
+  line-height: 170%;
   letter-spacing: 1.96px;
   font-family: $font-ja-2;
 }
@@ -1486,22 +1466,21 @@ body {
   margin-top: 14px;
   color: $accent-color-3;
   font-size: 14px;
-  // font-style: normal;
-  line-height: 170%; /* 23.8px */
+  line-height: 170%;
   letter-spacing: 0.98px;
 
-  @include mq(xl) {
+  @include mq(lg) {
     margin-top: 24px;
   }
 }
 
 .price {
-  padding-top: 83px;
+  padding-top: 84px;
   padding-bottom: 50px;
   background: #c5c9b3;
 
   @include mq(lg) {
-    padding-top: 91px;
+    padding-top: 99px;
     padding-bottom: 100px;
   }
 }
@@ -1516,12 +1495,6 @@ body {
     padding-inline: 50px;
     margin: 0 auto;
   }
-
-  // @include mq(xl) {
-  //   max-width: calc(850px + 175px * 2);
-  //   padding-inline: 175px;
-  //   margin: 0 auto;
-  // }
 }
 
 .price__title {
@@ -1545,7 +1518,8 @@ body {
   margin-right: auto;
 
   @include mq(lg) {
-    margin-top: 69px;
+    margin-top: 61px;
+    max-width: unset;
   }
 }
 
@@ -1595,16 +1569,6 @@ body {
   }
 }
 
-// .tab-button.active[data-tab="1"] {
-//   background-color: $accent-color-1;
-//   color: $base-color-w;
-// }
-
-// .tab-button.active[data-tab="2"] {
-//   background-color: $accent-color-3;
-//   color: $base-color-w;
-// }
-
 .price__card {
 }
 
@@ -1621,7 +1585,6 @@ body {
   }
 
   &.flash {
-    // background-color: rgba(0, 0, 0, 0.2); /* 色や不透明度は必要に応じて調整 */
     animation: flash-animation 0.3s ease-in-out;
   }
 }
@@ -1637,18 +1600,6 @@ body {
     background-color: rgba(0, 0, 0, 0);
   }
 }
-
-// #tab1.tab-content.active {
-//   .price-card {
-//     background-color: $accent-color-1;
-//   }
-// }
-
-// #tab2.tab-content.active {
-//   .price-card {
-//     background-color: $accent-color-3;
-//   }
-// }
 
 .price-card__contents {
   display: flex;
@@ -1666,7 +1617,6 @@ body {
 .price-card__items-inner {
   padding-left: 10px;
   padding-right: 25px;
-  // width: 100%;
 
   @include mq(lg) {
     max-width: calc(600px + 70px * 2);
@@ -1700,7 +1650,6 @@ body {
 
   @include mq(lg) {
     flex-direction: row;
-    // flex: 1;
     height: 67px;
 
     &:nth-child(n + 2) {
@@ -1714,7 +1663,7 @@ body {
   text-align: left;
   font-size: 16px;
   font-weight: 700;
-  line-height: 170%; /* 27.2px */
+  line-height: 170%;
   letter-spacing: 1.12px;
   position: relative;
 
@@ -1725,13 +1674,12 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    // border: 1px solid #dcdcdc;
     border-right: 1px solid #dcdcdc;
     color: var(--, #333);
     font-family: "Noto Sans Chakma";
     font-size: 16px;
     font-weight: 400;
-    line-height: 170%; /* 27.2px */
+    line-height: 170%;
     letter-spacing: 1.12px;
   }
 
@@ -1756,24 +1704,21 @@ body {
   font-family: "Noto Sans Chakma";
   font-size: 16px;
   font-weight: 400;
-  line-height: 170%; /* 27.2px */
+  line-height: 170%;
   letter-spacing: 1.12px;
 
   @include mq(lg) {
     width: 50%;
-    // height: 67px;
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid #dcdcdc;
   }
 }
 
 .price-card__text {
-  // text-align: left;
   font-size: 14px;
   font-weight: 400;
-  line-height: 170%; /* 23.8px */
+  line-height: 170%;
   letter-spacing: 0.98px;
 }
 
@@ -1781,7 +1726,6 @@ body {
   padding-inline: 11px;
 
   @include mq(lg) {
-    // padding-inline: 125px;
     max-width: calc(600px + 70px * 2);
     padding-inline: 70px;
     margin: 0 auto;
@@ -1821,6 +1765,11 @@ body {
 
 .work-flow__inner {
   text-align: center;
+
+  @include mq(xl) {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
 
 .work-flow__title {
@@ -1839,7 +1788,7 @@ body {
 .work-flow__text {
   margin-top: 51px;
   font-size: 16px;
-  line-height: 170%; /* 27.2px */
+  line-height: 170%;
   letter-spacing: 1.12px;
   padding-inline: 20px;
   text-align: left;
@@ -1880,17 +1829,10 @@ body {
 
   @include mq(lg) {
     flex-direction: row;
-    // justify-content: space-between;
-    // max-width: calc(900px + 50px * 2);
-    // padding-inline: 50px;
-    // gap: calc((100% - (200px * 4)) / 3);
-    // margin: 0 auto;
-    // gap: 30px;
-    gap: calc((100% - (190px * 4)) / 3);
+    gap: calc((100% - (200px * 4)) / 3);
   }
 
   @include mq(xl) {
-    // gap: auto;
     width: 100%;
     gap: calc((100% - (230px * 4)) / 3);
   }
@@ -1901,12 +1843,9 @@ body {
 
 .work-flow-card {
   background: $base-color-w;
-  // padding-bottom: 50px;
   border-radius: 3px;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
   position: relative;
-  // width: 230px;
-  // height: 331px;
   flex: 1;
 
   @include mq(xl) {
@@ -1917,13 +1856,14 @@ body {
     position: absolute;
     content: "";
     width: 41px;
-    height: 49px;
+    height: 45px;
     top: -24px;
-    left: 17px;
+    left: 20px;
   }
 
   &:nth-child(1)::before {
     background: url(/common/img/work-flow-01.png) no-repeat center center / contain;
+    width: 36px;
   }
 
   &:nth-child(2)::before {
@@ -1940,7 +1880,6 @@ body {
 }
 
 .work-flow-card__head {
-  // width: 230px;
   height: 140px;
 
   @include mq(xl) {
@@ -1955,6 +1894,14 @@ body {
 .work-flow-card__body {
   margin-top: 12px;
   height: 179px;
+
+  @include mq(lg) {
+    height: 200px;
+  }
+
+  @include mq(xl) {
+    height: 179px;
+  }
 }
 
 .work-flow-card__body-inner {
@@ -1969,14 +1916,14 @@ body {
   color: $accent-color-3;
   font-size: 16px;
   font-weight: 700;
-  line-height: 170%; /* 27.2px */
+  line-height: 170%;
   letter-spacing: 1.12px;
 }
 
 .work-flow-card__body-description {
   margin-top: 11px;
   font-size: 15px;
-  line-height: 170%; /* 25.5px */
+  line-height: 170%;
   letter-spacing: 1.05px;
   text-align: left;
 }
@@ -1984,7 +1931,6 @@ body {
 .sns {
   padding-top: 74px;
   padding-bottom: 50px;
-  // background: url(<path-to-image>) lightgray 50% / cover no-repeat;
   background: url(/common/img/sns-bg.png) no-repeat center center / cover;
 
   @include mq(lg) {
@@ -1996,6 +1942,11 @@ body {
   @include mq(lg) {
     padding-inline: 35px;
   }
+
+  @include mq(xl) {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
 
 .sns__contents {
@@ -2006,8 +1957,12 @@ body {
 
   @include mq(lg) {
     flex-direction: row;
-    gap: 99px;
+    gap: 40px;
     align-items: flex-start;
+  }
+
+  @include mq(xl) {
+    gap: 99px;
   }
 }
 
@@ -2041,11 +1996,6 @@ body {
   padding: 32px 45px;
   background: rgba(255, 255, 255, 0.66);
   margin: 0 auto;
-  // text-align: center;
-
-  // @include mq(sm) {
-  //   text-align: center;
-  // }
 
   @include mq(lg) {
     max-width: 850px;
@@ -2071,7 +2021,7 @@ body {
   color: $accent-color-3;
   font-size: 14px;
   font-weight: 500;
-  line-height: 170%; /* 23.8px */
+  line-height: 170%;
   letter-spacing: 0.98px;
 
   @include mq(sm) {
@@ -2097,6 +2047,9 @@ body {
 }
 
 .cta-button__link {
+  padding: 16px 24px 16px 31px;
+  border-radius: 8px;
+
   @include mq(lg) {
     padding: 15px 24px 15px 31px;
     border-radius: 8px;
@@ -2107,6 +2060,10 @@ body {
   padding-top: 50px;
   padding-bottom: 10px;
   background: $accent-color-3;
+
+  @include mq(md) {
+    padding-bottom: 30px;
+  }
 }
 
 .footer__inner {
@@ -2195,7 +2152,7 @@ body {
   font-family: $font-en;
   font-size: 11px;
   font-weight: 600;
-  line-height: 24px; /* 218.182% */
+  line-height: 24px;
   letter-spacing: 3px;
 }
 
@@ -2214,7 +2171,7 @@ body {
   color: $base-color-w;
   font-size: 32px;
   font-weight: 700;
-  line-height: 160%; /* 51.2px */
+  line-height: 160%;
   letter-spacing: 4.16px;
   font-family: $font-ja-2;
   white-space: nowrap;
@@ -2222,6 +2179,11 @@ body {
 
 //page-works.htmlのscss
 .works-detail-fv {
+  margin-top: 70px;
+
+  @include mq(md) {
+    margin-top: 100px;
+  }
 }
 
 .works-detail-fv__inner {
@@ -2229,24 +2191,6 @@ body {
 
 .works-detail-fv__contents {
 }
-
-//sp時の画像を、pc時の画像を中央部分を切り取って表示する
-// .works-detail-fv__image-container {
-//   width: 100%;
-//   position: relative;
-//   overflow: hidden;
-//   height: 335px;
-// }
-
-// .works-detail-fv__image {
-//   position: absolute;
-//   left: 50%;
-//   top: 50%;
-//   transform: translate(-50%, -50%);
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// }
 
 .works-detail-fv__head {
 }
@@ -2275,9 +2219,14 @@ body {
   grid-template-columns: 1fr;
   row-gap: 13px;
 
+  @include mq(md) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(20px / 768px * 100%);
+    row-gap: 25px;
+  }
+
   @include mq(lg) {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     column-gap: calc(60px / 1200px * 100%);
     row-gap: 34px;
   }
@@ -2293,6 +2242,11 @@ body {
 
 //page-work-individual.htmlのscss
 .work-individual-fv {
+  margin-top: 70px;
+
+  @include mq(md) {
+    margin-top: 100px;
+  }
 }
 
 .work-individual-fv__inner {
@@ -2302,6 +2256,9 @@ body {
 }
 
 .work-individual-fv__head {
+  img {
+    width: 100%;
+  }
 }
 
 .work-individual-fv__head-text {
@@ -2353,10 +2310,6 @@ body {
     padding-inline: 41px;
     margin: 0 auto;
   }
-
-  // @include mq(lg) {
-  //   gap: 80px;
-  // }
 }
 
 .work-individual-fv__item {
@@ -2380,13 +2333,13 @@ body {
 .work-individual-fv__subtext {
   font-family: $font-en;
   font-size: 14px;
-  line-height: 170%; /* 23.8px */
+  line-height: 170%;
   letter-spacing: 0.98px;
 }
 
 .work-individual-fv__description {
   font-size: 14px;
-  line-height: 170%; /* 23.8px */
+  line-height: 170%;
   letter-spacing: 0.98px;
 
   &.type2 {
@@ -2407,6 +2360,11 @@ body {
 //page-contactのhtml
 .contact-fv {
   background: $base-color-2;
+  margin-top: 70px;
+
+  @include mq(md) {
+    margin-top: 100px;
+  }
 }
 
 .contact-fv__inner {
@@ -2447,7 +2405,7 @@ body {
 .contact-fv__body-text {
   font-family: "Noto Sans Chakma";
   font-size: 14px;
-  line-height: 170%; /* 23.8px */
+  line-height: 170%;
   letter-spacing: 0.98px;
   text-align: left;
 
@@ -2489,7 +2447,7 @@ body {
 .form-field__label {
   font-size: 14px;
   font-weight: 700;
-  line-height: 180%; /* 25.2px */
+  line-height: 180%;
   letter-spacing: 0.56px;
 }
 
@@ -2497,7 +2455,7 @@ body {
   color: $base-color-w;
   text-align: center;
   font-weight: 500;
-  line-height: 180%; /* 21.6px */
+  line-height: 180%;
   letter-spacing: 0.48px;
   padding: 2px 10px;
   border-radius: 5px;
@@ -2542,7 +2500,6 @@ body {
 
   &:focus {
     border: 1px solid #9ed0e0;
-    // background: #e9f6f8;
     background: url(/common/img/form-select-arrow.png) no-repeat center right 0 / 43px 36px, linear-gradient(to right, #e9f6f8); /* グラデーションの背景 */
   }
 
@@ -2643,7 +2600,6 @@ body {
   }
 
   a {
-    // text-decoration-line: underline;
     font-weight: inherit;
   }
 }
@@ -2663,7 +2619,7 @@ body {
   color: $base-color-w;
   font-size: 16px;
   font-weight: 500;
-  line-height: 170%; /* 27.2px */
+  line-height: 170%;
   letter-spacing: 1.6px;
   border: none;
   background: transparent;
@@ -2682,6 +2638,11 @@ body {
 }
 
 .privacy-fv {
+  margin-top: 70px;
+
+  @include mq(md) {
+    margin-top: 100px;
+  }
 }
 
 .privacy-fv__inner {
@@ -2691,6 +2652,9 @@ body {
 }
 
 .privacy-fv__head {
+  img {
+    width: 100%;
+  }
 }
 
 .privacy-fv__head-text {
@@ -2731,7 +2695,6 @@ body {
   text-edge: cap;
   font-family: $font-ja-2;
   font-size: 14px;
-  // font-style: normal;
   line-height: 180%;
   letter-spacing: 0.56px;
 
@@ -2774,9 +2737,8 @@ body {
   text-edge: cap;
   font-family: $font-ja-2;
   font-size: 22px;
-  // font-style: normal;
   font-weight: 700;
-  line-height: 180%; /* 39.6px */
+  line-height: 180%;
   letter-spacing: 0.88px;
   padding-right: 5px;
 
@@ -2790,12 +2752,9 @@ body {
 }
 
 .privacy-fv__body-text {
-  // leading-trim: both;
-  // text-edge: cap;
   font-size: 14px;
-  line-height: 180%; /* 25.2px */
+  line-height: 180%;
   letter-spacing: 0.56px;
-  // word-break: auto-phrase;
 
   @include mq(lg) {
     font-size: 16px;
@@ -2833,7 +2792,7 @@ body {
 .privacy-fv__body-info-title {
   padding-right: 15px;
   position: relative;
-  line-height: 180%; /* 28.8px */
+  line-height: 180%;
   font-size: 12px;
   letter-spacing: 0.56px;
 
@@ -2852,7 +2811,7 @@ body {
 }
 
 .privacy-fv__body-info-content {
-  line-height: 180%; /* 28.8px */
+  line-height: 180%;
   font-size: 12px;
   letter-spacing: 0.56px;
 
